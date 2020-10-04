@@ -1,0 +1,28 @@
+{
+	"barbarian": {
+		"parent": "warrior",
+		"image": "",
+		"levels": [
+			[
+				{"name": "Sword Proficiency", "description": "Able to use swords with ease."}
+			],
+			[
+				{"name": "Potion Affinity✨", "description": "Health potion heal additional damage equal to your strength."}
+			]
+		]
+	},
+
+
+	"marksman": {
+		"parent": "ranger",
+		"image": "",
+		"levels": [
+			[
+				{"name": "Bow Proficiency", "description": "Able to use bows with ease. You can shoot arrows up to 10 squares. Each additional square after will decrease your attack roll by 1."}
+			],
+			[
+				{"name": "Eyes of the Hawk✨", "description": "Your vision is clearer than any other. You can see very far distances."}
+			]
+		]
+	}
+}

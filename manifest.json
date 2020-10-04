@@ -1,6 +1,6 @@
 {
-  "short_name": "Eleventy Website Template",
-  "name": "A starter repository showing how to build a website with the Eleventy static site generator.",
+  "short_name": "Battleborn",
+  "name": "Battleborn: An entry level table top roleplaying game.",
   "start_url": "/?source=pwa",
   "background_color": "#222222",
   "display": "standalone",

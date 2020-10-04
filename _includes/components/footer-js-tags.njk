@@ -1,6 +1,28 @@
+<script src="//api.backendless.com/sdk/js/latest/backendless.js"></script>
+
+
+{% if spellsheet %}
+<script>
+	let spellsheet = {{ classes|dump|safe }};
+</script>
+{% endif %}
+
+
+
+
 <script>
 	{% set js %}
-	{% include "_includes/js/scripts.js" %}
+	// Global values
+	{% include "_includes/js/_setup.js" %}
+
+	// Form setup
+	{% include "_includes/js/authentication.js" %}
+	{% include "../js/character.js" %}
+	{% include "../js/campaign.js" %}
+
+	// Scripts
+	{% include "_includes/js/data-load.js" %}
 	{% endset %}
+
 	{{ js | safe }}
 </script>

@@ -1,0 +1,60 @@
+---
+layout: layouts/base.njk
+title: "Create a Character"
+permalink: /starting-zone/character/create/
+---
+
+
+
+
+<div class="container">
+	<h1 class="mb-5">Create a Character</h1>
+
+	<form id="character-create" method="POST">
+		<div class="form-group mb-5">
+			<label for="name">Name</label>
+			<input type="text" class="form-control" id="name" name="name">
+		</div><!-- end group -->
+
+		<div class="form-group mb-5">
+			<p>Class</p>
+			<div class="btn-group btn-group-toggle d-flex flex-wrap" data-toggle="buttons">
+				<label class="btn btn-primary d-block w-100 text-left rounded-0 m-0">
+					<input type="radio" name="char-class" id="class-warrior">Warrior
+				</label>
+
+				<label class="btn btn-primary d-block w-100 text-left rounded-0 m-0">
+					<input type="radio" name="char-class" id="class-rogue">Rogue
+				</label>
+
+				<label class="btn btn-primary d-block w-100 text-left rounded-0 m-0">
+					<input type="radio" name="char-class" id="class-druid">Druid
+				</label>
+			</div><!-- end button group -->
+		</div><!-- end group -->
+
+		<div class="form-group mb-5">
+			<p>Size</p>
+			<div class="btn-group btn-group-toggle d-flex flex-wrap" data-toggle="buttons">
+				<label class="btn btn-primary d-block w-100 text-left rounded-0 m-0">
+					<input type="radio" name="char-size" id="size-short">Short
+				</label>
+
+				<label class="btn btn-primary d-block w-100 text-left rounded-0 m-0">
+					<input type="radio" name="char-size" id="size-average">Average
+				</label>
+
+				<label class="btn btn-primary d-block w-100 text-left rounded-0 m-0">
+					<input type="radio" name="char-size" id="size-tall">Tall
+				</label>
+			</div><!-- end button group -->
+		</div><!-- end group -->
+
+		<div class="form-group mb-5">
+			<button type="submit" class="btn btn-primary">Create Character</button>
+		</div>
+	</form>
+</div><!-- end container -->
+
+
+

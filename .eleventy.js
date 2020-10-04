@@ -93,6 +93,16 @@ module.exports = function(eleventyConfig) {
 		return DateTime.local().toFormat("yyyy");
 	});
 
+	eleventyConfig.addShortcode("dataLoad", function(type) {
+		/* {% dataLoad "type" %} */
+		return "" +
+			"<span class='' data-load='" + type + "'>" +
+				"<span class='spinner-border d-inline-block align-middle' role='status'>" +
+					"<span class='sr-only'>Loading...</span>" +
+				"</span>" +
+			"</span>";
+	});
+
 
 
 

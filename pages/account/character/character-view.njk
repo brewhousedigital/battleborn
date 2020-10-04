@@ -1,0 +1,101 @@
+---
+layout: layouts/base.njk
+title: "Your Character"
+permalink: /starting-zone/character/view/
+spellsheet: true
+---
+
+
+
+<div class="container">
+	<h1 class="mb-5">Your Character {% dataLoad "name" %}</h1>
+
+	<div class="row">
+
+		<div class="col-xl-auto mb-5">
+			<div class="{{ css.card }}">
+				<p class="font-weight-bold">Info</p>
+				<p>Level: {% dataLoad "level" %}</p>
+				<p>Class: {% dataLoad "class" %}</p>
+				<p>Speed: {% dataLoad "speed" %} squares</p>
+			</div><!-- end card -->
+		</div><!-- end col -->
+
+		<div class="col-xl mb-5">
+			<div class="{{ css.card }}">
+				<p class="font-weight-bold">Health</p>
+				<output for="healthSlider" class="h4 mb-0" id="healthSliderOutput">{% dataLoad "currentHP" %}</output>
+				<div class="form-group mb-3">
+					<label for="healthSlider" class="sr-only">Health Slider</label>
+					<input type="range"
+						   class="form-control"
+						   id="healthSlider"
+						   name="healthSlider"
+						   min="0"
+						   max="5"
+						   step="1">
+				</div><!-- end form group -->
+
+				<div class="input-group">
+					<div class="input-group-prepend w-100" style="max-width: 85px;">
+						<button class="btn btn-primary w-100 px-0"
+								type="button"
+								id="health-reduce">Reduce</button>
+					</div><!-- end button -->
+
+					<input type="number"
+						   class="form-control text-center"
+						   id="health-input"
+						   placeholder="0"
+						   value="0"
+						   aria-label="Increase or decrease your health">
+
+					<div class="input-group-append w-100" style="max-width: 85px;">
+						<button class="btn btn-primary w-100 px-0"
+								type="button"
+								id="health-increase">Increase</button>
+					</div><!-- end button -->
+				</div>
+			</div><!-- end card -->
+		</div><!-- end col -->
+
+		<div class="col-xl-auto mb-5">
+			<div class="{{ css.card }}">
+				<p class="font-weight-bold">Armor</p>
+				<p>Physical: {% dataLoad "physicalArmor" %}</p>
+				<p>Magic: {% dataLoad "magicArmor" %}</p>
+			</div><!-- end card -->
+		</div><!-- end col -->
+
+		<div class="col-xl-auto mb-5">
+			<div class="{{ css.card }}">
+				<p class="font-weight-bold">Physical Attributes</p>
+				<p>Strength: {% dataLoad "str" %}</p>
+				<p>Dexterity: {% dataLoad "dex" %}</p>
+				<p>Constitution: {% dataLoad "con" %}</p>
+			</div><!-- end card -->
+		</div><!-- end col -->
+
+		<div class="col-xl-auto mb-5">
+			<div class="{{ css.card }}">
+				<p class="font-weight-bold">Magic Attributes</p>
+				<p>Intelligence: {% dataLoad "int" %}</p>
+				<p>Wisdom: {% dataLoad "wis" %}</p>
+				<p>Charisma: {% dataLoad "cha" %}</p>
+			</div><!-- end card -->
+		</div><!-- end col -->
+
+	</div><!-- end row -->
+
+
+	<div class="mb-5">
+	<div class="{{ css.card }}">
+		<p class="font-weight-bold">Spells</p>
+		<div id="spellsheet"></div>
+	</div><!-- end spells -->
+	</div><!-- end margin -->
+
+</div><!-- end container -->
+
+
+
