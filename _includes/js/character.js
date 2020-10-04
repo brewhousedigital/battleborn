@@ -16,7 +16,7 @@ function loadCharacterInfo() {
 		// Backendless get character
 		let response = {
 			"name": "Axin🤙",
-			"level": 6,
+			"level": 1,
 			"class": "barbarian",
 			"speed": 5,
 			"currentHP": 20,
@@ -81,34 +81,44 @@ function loadCharacterInfo() {
 		let spellsheetHTML = "";
 		let temporaryCounter = 99999;
 
-		for (let i = 0; i < response.level; i++) {
-			// Some levels have multiple spells so loop through each
+		currentSpellList.forEach(function(spellGroup, i) {
 
-			if(currentSpellList[i] !== undefined) {
-				currentSpellList[i].forEach(function(spell) {
-					let hidden = i === temporaryCounter ? "invisible" : "";
+			let spellsheetEachHTML = "";
+			spellGroup.forEach(function(spell) {
+				spellsheetEachHTML += `
+					<p class="mb-0">${spell.name}</p>
+					<p class="mb-3 small">${spell.description}</p>
+				`;
+			});
 
-					spellsheetHTML += `
-						<div class="d-flex mb-3">
-							<div class="col-auto text-center ${hidden}">
-								<div class="small">Level</div>
-								<div class="h4">${i + 1}</div>
-							</div>
+			let spellOpacity = i >= response.level ? "opacity-50" : "";
+			let spellAvailable = i >= response.level ? "data-spell='unavailable'" : "";
+			let spellDisplay = i >= response.level ? "display:none;" : "";
 
-							<div class="col">
-								<p class="mb-0">${spell.name}</p>
-								<p class="mb-0 small">${spell.description}</p>
-							</div>
-						</div>
-					`;
+			spellsheetHTML += `
+				<div class="row mb-3 ${spellOpacity}" ${spellAvailable} style="${spellDisplay}">
+					<div class="col-auto text-center">
+						<div class="small">Level</div>
+						<div class="h4">${i + 1}</div>
+					</div>
 
-					temporaryCounter = i;
-				});
-			}
-
-		}
+					<div class="col">${spellsheetEachHTML}</div>
+				</div>
+			`;
+		});
 
 		spellsheetContainer.innerHTML = spellsheetHTML;
+
+		document.getElementById("spellsheet-toggle").addEventListener("click", function() {
+			let upcomingSpells = spellsheetContainer.querySelectorAll("[data-spell='unavailable']");
+			upcomingSpells.forEach(function(el) {
+				if(el.style.display === "none") {
+					el.style.display = "";
+				} else {
+					el.style.display = "none";
+				}
+			});
+		});
 	}
 }
 
