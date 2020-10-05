@@ -48,6 +48,7 @@ spellsheet: true
 						   id="health-input"
 						   placeholder="0"
 						   value="0"
+						   min="0"
 						   aria-label="Increase or decrease your health">
 
 					<div class="input-group-append w-100" style="max-width: 85px;">
@@ -85,19 +86,66 @@ spellsheet: true
 			</div><!-- end card -->
 		</div><!-- end col -->
 
+
+		<div class="w-100"></div>
+
+
+
+		<div class="col-xl-6 mb-5">
+			<div class="{{ css.card }}">
+				<p class="font-weight-bold mb-4">Equipment</p>
+
+				<div class="row text-center mb-4">
+					<div class="col-4">
+						<p class="small">Weapon</p>
+						<button type="button" class="btn border p-4" data-equipment="weapon">{% spinner %}</button>
+					</div><!-- end col -->
+
+					<div class="col-4">
+						<p class="small">Armor</p>
+						<button type="button" class="btn border p-4" data-equipment="armor">{% spinner %}</button>
+					</div><!-- end col -->
+
+					<div class="col-4">
+						<p class="small">Accessory</p>
+						<button type="button" class="btn border p-4" data-equipment="accessory">{% spinner %}</button>
+					</div><!-- end col -->
+				</div><!-- end row -->
+
+				<div id="equipment-details" style="display: none;">
+					<p class="font-weight-bold">Equipment Details</p>
+					<p data-equipment-details="name">Name: <span></span></p>
+					<p data-equipment-details="description">Description: <span></span></p>
+					<p data-equipment-details="damageDice">Damage Dice: <span></span></p>
+					<p data-equipment-details="damageBonus">Damage Bonus: <span></span></p>
+					<p data-equipment-details="physicalArmor">Physical Armor: <span></span></p>
+					<p data-equipment-details="magicArmor">Magic Armor: <span></span></p>
+					<p data-equipment-details="price">Price: <span></span></p>
+				</div><!-- end details -->
+
+			</div><!-- end equipment -->
+		</div><!-- end col -->
+
+
+		<div class="col-xl-6 mb-5">
+			<div class="{{ css.card }}">
+				<div class="d-flex justify-content-between mb-4">
+					<p class="font-weight-bold mb-0">Spells</p>
+					<button class="btn btn-sm" id="spellsheet-toggle" type="button">Show All</button>
+				</div><!-- end flex -->
+
+				<div id="spellsheet">{% spinner %}</div>
+			</div><!-- end spells -->
+		</div><!-- end col -->
+
 	</div><!-- end row -->
 
 
-	<div class="mb-5">
-	<div class="{{ css.card }}">
-		<div class="d-flex justify-content-between mb-4">
-			<p class="font-weight-bold mb-0">Spells</p>
-			<button class="btn btn-sm" id="spellsheet-toggle" type="button">Show All</button>
-		</div><!-- end flex -->
 
-		<div id="spellsheet">{% spinner %}</div>
-	</div><!-- end spells -->
-	</div><!-- end margin -->
+
+
+
+
 
 </div><!-- end container -->
 
