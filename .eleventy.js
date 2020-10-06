@@ -8,10 +8,12 @@ const markdownItAnchor = require("markdown-it-anchor");
 
 
 
+
 // Custom additions
 const MinifyCSS = require("clean-css");
 const slugify = require("slugify");
-
+//const eleventyIcons = require('eleventy-icons');
+//console.log(eleventyIcons);
 
 
 

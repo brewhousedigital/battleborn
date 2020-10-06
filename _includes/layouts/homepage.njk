@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+
+{% include "_includes/components/head-primary.njk" %}
+
+<body class="homepage">
+
+<style>
+	body {
+		background-color: #101010;
+		color: #fff;
+	}
+	main > .row {
+		min-height: 100vh;
+	}
+	main header h1 {display: none;}
+	main header nav {margin: 0 auto;}
+	.homepage-color-side {
+		background-image: url("/images/homepage-banner-f.jpg");
+		background-position: center top;
+		background-size: cover;
+		max-width: 30%;
+	}
+</style>
+
+<main class="container pb-5 border-bottom mb-5">
+	<div class="row no-gutters">
+		<div class="col homepage-color-side">
+
+		</div><!-- end col -->
+
+		<div class="col text-center align-self-center">
+			<h1>Battleborn</h1>
+			{% include "_includes/components/header-nav.njk" %}
+		</div><!-- end col -->
+	</div><!-- end row -->
+</main>
+
+
+{% include "_includes/components/footer.njk" %}
+</body>
+</html>

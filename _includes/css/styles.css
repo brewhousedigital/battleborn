@@ -28,3 +28,59 @@ a, button {
 	overflow-y: scroll;
 	overflow-x: hidden;
 }
+
+nav {
+	/*opacity: 0;*/
+	/*transition: opacity 200ms;*/
+}
+
+nav a {
+	opacity: 0;
+	transition: all 1000ms!important;
+}
+
+nav a:nth-child(odd) {
+	transform: translateY(-10px);
+}
+
+nav a:nth-child(even) {
+	transform: translateY(10px);
+}
+
+
+@media (prefers-reduced-motion) {
+	nav a:nth-child(odd),
+	nav a:nth-child(even) {
+		transition: opacity 1000ms!important;
+		transform: translateY(0px);
+	}
+}
+
+nav.no-motion a:nth-child(odd),
+nav.no-motion a:nth-child(even) {
+	transition: opacity 1000ms!important;
+	transform: translateY(0px);
+}
+
+
+
+
+nav.loaded a {
+	transform: translateY(0);
+	opacity: 1;
+}
+
+.grid-light-padding.row,
+.grid-light-padding .row {
+	margin-left: -10px;
+	margin-right: -10px;
+}
+
+.grid-light-padding [class^="col"] {
+	padding-left: 10px;
+	padding-right: 10px;
+}
+
+.homepage main {
+	min-height: 100vh;
+}

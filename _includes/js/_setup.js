@@ -5,6 +5,7 @@ Backendless.initApp(APP_ID, API_KEY);
 
 // Global variables
 let cache = {};
+let nav = document.querySelector("nav");
 let spinner = "<span class='spinner-border d-inline-block align-middle' role='status'><span class='sr-only'>Loading...</span></span>";
 
 
