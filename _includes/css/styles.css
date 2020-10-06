@@ -51,14 +51,14 @@ nav a:nth-child(even) {
 @media (prefers-reduced-motion) {
 	nav a:nth-child(odd),
 	nav a:nth-child(even) {
-		transition: opacity 1000ms!important;
+		transition: opacity 0ms!important;
 		transform: translateY(0px);
 	}
 }
 
 nav.no-motion a:nth-child(odd),
 nav.no-motion a:nth-child(even) {
-	transition: opacity 1000ms!important;
+	transition: opacity 0ms!important;
 	transform: translateY(0px);
 }
 

@@ -9,6 +9,7 @@
 	body {
 		background-color: #101010;
 		color: #fff;
+		min-height: 100vh;
 	}
 	main > .row {
 		min-height: 100vh;
@@ -23,20 +24,24 @@
 	}
 </style>
 
-<main class="container pb-5 border-bottom mb-5 px-0">
+<main class="container px-0">
 	<div class="row no-gutters">
 		<div class="col homepage-color-side">
 
 		</div><!-- end col -->
 
 		<div class="col text-center align-self-center">
-			<h1>Battleborn</h1>
-			{% include "_includes/components/header-nav.njk" %}
+			<div class="pb-5 mb-5">
+				<h1>Battleborn</h1>
+				{% include "_includes/components/header-nav.njk" %}
+			</div>
+
+			{% include "_includes/components/footer.njk" %}
 		</div><!-- end col -->
 	</div><!-- end row -->
 </main>
 
 
-{% include "_includes/components/footer.njk" %}
+
 </body>
 </html>
