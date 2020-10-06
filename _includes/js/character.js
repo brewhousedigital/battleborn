@@ -19,7 +19,7 @@ function loadCharacterInfo() {
 			"level": 1,
 			"class": "barbarian",
 			"speed": 5,
-			"currentHP": 20,
+			"currentHP": 50,
 			"maxHP": 50,
 			"physicalArmor": 0,
 			"magicArmor": 0,
@@ -44,8 +44,8 @@ function loadCharacterInfo() {
 				"description": "This armor provides slight protection against physical attacks.",
 				"image": "placeholder",
 				"damageDice": "",
-				"damageBonus": 2,
-				"physicalArmor": 0,
+				"damageBonus": 0,
+				"physicalArmor": 1,
 				"magicArmor": 0,
 				"price": 20
 			},
@@ -126,7 +126,6 @@ function loadCharacterInfo() {
 		let spellsheetContainer = document.getElementById("spellsheet");
 		let currentSpellList = spellsheet[response.class]["levels"];
 		let spellsheetHTML = "";
-		let temporaryCounter = 99999;
 
 		currentSpellList.forEach(function(spellGroup, i) {
 
@@ -177,11 +176,11 @@ function loadCharacterInfo() {
 		let equipment = document.querySelectorAll("[data-equipment]");
 
 		// Backendless
-		// let queryBuilder = Backendless.DataQueryBuilder.create();
-		// queryBuilder.addProperties('name');
-		// queryBuilder.addProperties('type.name as type');
-		// queryBuilder.addProperties('damageDice.name as damageDice');
-		/*Backendless.Data.of("d20_equipment").find(queryBuilder)
+		/*let queryBuilder = Backendless.DataQueryBuilder.create();
+		queryBuilder.addProperty("name");
+		queryBuilder.addProperty("damageDice.name as damageDice");
+
+		Backendless.Data.of("d20_equipment").find(queryBuilder)
 			.then( function(response) {
 				console.log(response);
 			})
@@ -218,7 +217,12 @@ function loadCharacterInfo() {
 					}
 
 					if(typeof response[type][lineType] === "number") {
-						line.querySelector("span").innerText = response[type][lineType];
+						if(response[type][lineType] > 0) {
+							line.querySelector("span").innerText = response[type][lineType];
+						} else {
+							line.style.display = "none";
+						}
+
 					}
 
 				});

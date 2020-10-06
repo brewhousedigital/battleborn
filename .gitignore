@@ -3,3 +3,5 @@ node_modules/
 package-lock.json
 .idea
 _site
+
+pages/static/rules/to-sort.njk

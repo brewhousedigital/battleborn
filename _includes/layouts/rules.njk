@@ -1,0 +1,23 @@
+---
+layout: layouts/base.njk
+---
+
+<div class="container">
+	<h1 class="mb-5">Rules: {{ title }}</h1>
+
+	<div class="row">
+		<div class="col-auto border-right">
+			<a href="/rules/" class="btn d-block text-left">Quickstart</a>
+			<hr>
+			<a href="/rules/attributes/" class="btn d-block text-left">Attributes</a>
+			<a href="/rules/classes/" class="btn d-block text-left">Classes</a>
+			<a href="/rules/combat/" class="btn d-block text-left">Combat</a>
+			<a href="/rules/leveling-up/" class="btn d-block text-left">Leveling Up</a>
+			<a href="/rules/skill-checks/" class="btn d-block text-left">Skill Checks</a>
+		</div><!-- end col auto -->
+
+		<div class="col">
+			{{ content | safe }}
+		</div><!-- end col -->
+	</div><!-- end row -->
+</div><!-- end container -->
