@@ -13,12 +13,12 @@ permalink: /roll-a-d6-to-login/
 	<form id="roll-a-d6-to-login" method="POST">
 		<div class="form-group mb-5">
 			<label for="email">Email</label>
-			<input type="email" class="form-control" id="email" name="email" value="zachary.voss@gmail.com">
+			<input type="email" class="form-control" id="email" name="email" required>
 		</div><!-- end form group -->
 
 		<div class="form-group mb-5">
 			<label for="password">Password</label>
-			<input type="password" class="form-control" id="password" name="password">
+			<input type="password" class="form-control" id="password" name="password" required>
 		</div><!-- end form group -->
 
 		{% include "_includes/components/toast.njk" %}
