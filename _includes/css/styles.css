@@ -1,3 +1,14 @@
+body {
+	min-height: 101vh;
+	background-color: #222222;
+	color: #eeeeee;
+}
+a, button {
+	color: #2ecc71;
+}
+.card {
+	background-color: #000;
+}
 .spinner-border {
 	width: 1em;
 	height: 1em;
